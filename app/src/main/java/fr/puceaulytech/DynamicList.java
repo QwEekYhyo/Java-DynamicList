@@ -7,6 +7,8 @@ public class DynamicList {
     private int size;
     private int[] list;
 
+    public DynamicList() {this(5);}
+
     public DynamicList(int capac) {
         this.capacity = capac;
         this.size = 0;
