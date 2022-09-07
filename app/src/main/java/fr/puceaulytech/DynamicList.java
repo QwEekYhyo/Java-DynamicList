@@ -1,3 +1,5 @@
+package fr.puceaulytech;
+
 import java.util.Arrays;
 
 public class DynamicList {

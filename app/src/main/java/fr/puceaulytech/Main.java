@@ -1,3 +1,5 @@
+package fr.puceaulytech;
+
 public class Main {
     public static void main(String[] args) {
         DynamicList array = new DynamicList(3);
