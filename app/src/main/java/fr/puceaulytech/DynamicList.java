@@ -15,32 +15,30 @@ public class DynamicList {
         this.list = new int[this.capacity];
     }
 
-    private void ensure(boolean back) {
+    private void ensure() {
         if (this.size >= this.capacity) {
             int[] n = new int[this.capacity+1];
-            for (int i = 0; i<this.size; i++) {
-                if (back) {n[i+1] = this.list[i];}
-                else {n[i] = this.list[i];}
-            }
+            for (int i = 0; i<this.size; i++) {n[i] = this.list[i];}
             this.list = n;
             this.capacity++;
         }
     }
 
     public void append(int x) {
-        this.ensure(false);
+        this.ensure();
         this.list[this.size] = x;
         this.size++;
     }
 
-    public void pushback(int x) {
-        this.ensure(true);
-        if (this.capacity != 0 && this.list[0] != 0) {
+    public void insert(int x, int index) {
+        if (this.capacity <= this.size) {
             int[] n = new int[this.capacity];
-            for (int i = 0; i<this.size; i++) {n[i+1] = this.list[i];}
+            for (int i = 0; i<index; i++) {n[i] = this.list[i];}
+            for (int i = index+1; i<this.size; i++) {n[i] = this.list[i-1];}
             this.list = n;
+            this.capacity++;
         }
-        this.list[0] = x;
+        this.list[index] = x;
         this.size++;
     }
 

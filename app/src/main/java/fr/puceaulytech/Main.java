@@ -5,7 +5,9 @@ public class Main {
         DynamicList array = new DynamicList(3);
         for (int i = 0; i<10; i++) {
             System.out.println(array.toString());
-            array.pushback((i - 3) * (i - 3));
+            array.append((i - 3) * (i - 3));
         }
+        array.insert(69, 5);
+        System.out.println(array.toString());
     }
 }
