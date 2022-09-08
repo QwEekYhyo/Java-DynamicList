@@ -7,7 +7,10 @@ public class Main {
             System.out.println(array.toString());
             array.append((i - 3) * (i - 3));
         }
+        System.out.println(array.toString());
         array.insert(69, 5);
+        System.out.println(array.toString());
+        array.sort();
         System.out.println(array.toString());
     }
 }
