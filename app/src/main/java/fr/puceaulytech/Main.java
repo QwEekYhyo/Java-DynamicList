@@ -8,9 +8,12 @@ public class Main {
             array.append((i - 3) * (i - 3));
         }
         System.out.println(array.toString());
-        array.insert(69, 5);
+        array.insert(5, 69);
         System.out.println(array.toString());
         array.sort();
+        System.out.println(array.toString());
+        System.out.println(array.get(8));
+        array.set(8, 100);
         System.out.println(array.toString());
     }
 }

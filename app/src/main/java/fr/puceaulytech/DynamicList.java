@@ -15,6 +15,9 @@ public class DynamicList {
         this.list = new int[this.capacity];
     }
 
+    public int get(int index) {return this.list[index];}
+    public void set(int index, int x) {this.list[index] = x;}
+
     private void ensure() {
         if (this.size >= this.capacity) {
             int[] n = new int[this.capacity+1];
@@ -30,7 +33,7 @@ public class DynamicList {
         this.size++;
     }
 
-    public void insert(int x, int index) {
+    public void insert(int index, int x) {
         if (this.capacity <= this.size) {
             int[] n = new int[this.capacity+1];
             for (int i = 0; i<index; i++) {n[i] = this.list[i];}
@@ -46,6 +49,9 @@ public class DynamicList {
     public String toString() {
         return Arrays.toString(this.list);
     }
+
+    public int size() {return this.size;}
+    public int maxSize() {return this.capacity;}
 
     private static void shiftDown(int[] list, int node, int index) {
         int k = node;
